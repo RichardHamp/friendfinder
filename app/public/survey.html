@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>FriendFinder</title>
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <!-- ajax -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+<!-- About You Section -->
+        <h2><strong>Survey Questions</strong></h2>
+        <hr>
+        <h3><strong>About You</strong></h3>
+        <h4>Name (please include any titles or use nicknames such as "The Great" or "Gluttonous Bob")</h4>
+        <input type="text" id="name" class="form-control" required="">
+        <h4>Image Link (fake catfishing photos preferred, but something is required here)</h4>
+        <input type="text" id="photo" class="form-control" required="">
+        <hr>
+
+       <h3><strong>LET THE INQUISITION BEGIN!</strong></h3>
+       <hr>
+
+       <!-- Questions -->
+        <h3><strong>Question 1</strong></h3>
+        <h4>You're a pacifist and think fighting a desperate attempt to control some part of a chaotic life and people should really just get a fuzzy pet instead.</h4>
+        <select class="chosen-select" id="q1">
+            <option value=""></option>
+            <option value="1">1 (Is this a real question?)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (um...I guess so.)</option>
+        </select>
+
+        <h3><strong>Question 2</strong></h3>
+        <h4>Different colors of skin and/or species is what made 80's cartoons great. Make cartoons great again!</h4>
+        <select class="chosen-select" id="q2">
+            <option value=""></option>
+            <option value="1">1 (I could do without the political reference.)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Hell's yeah! Bring on the orange, tentacled things.)</option>
+        </select>
+
+
+        <h3><strong>Question 3</strong></h3>
+        <h4>Swords > Guns. </h4>
+        <select class="chosen-select" id="q3">
+            <option value=""></option>
+            <option value="1">1 (Knife to a gun fight. 'Nuf said.)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Anyone who says differently is a communist!)</option>
+        </select>
+
+
+        <h3><strong>Question 4</strong></h3>
+        <h4>Villians should always have illiteration in their names.</h4>
+        <select class="chosen-select" id="q4">
+            <option value=""></option>
+            <option value="1">1 (Skeletor didn't and he's the best of the bunch.)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Purple Pieman of Porcupine Peak ftw!)</option>
+        </select>
+
+
+        <h3><strong>Question 5</strong></h3>
+        <h4>Shooting firework-type lights from your belly is a legit way to defeat an enemy.</h4>
+        <select class="chosen-select" id="q5">
+            <option value=""></option>
+            <option value="1">1 (Starting to think these questions aren't going anywhere I want to go.)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Carebears prepare to stare! STARE THERE!!!)</option>
+        </select>
+
+
+        <h3><strong>Question 6</strong></h3>
+        <h4>Exploring personal feelings or having a moral is the main point of any cartoon.</h4>
+        <select class="chosen-select" id="q6">
+            <option value=""></option>
+            <option value="1">1 (Violence reigns supreme...more things blowing up, please.)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (I FEEL like this is true. Don't negate my emotions.)</option>
+        </select>
+
+
+        <h3><strong>Question 7</strong></h3>
+        <h4>Talking animals? Yeah or Nay.</h4>
+        <select class="chosen-select" id="q7">
+            <option value=""></option>
+            <option value="1">1 (Stupid...wait, Thundercats doesn't count, right?)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (I connected on a personal level with Zipper from Rescue Rangers.)</option>
+        </select>
+
+        <h3><strong>Question 8</strong></h3>
+        <h4>Classic anime?</h4>
+        <select class="chosen-select" id="q8">
+            <option value=""></option>
+            <option value="1">1 (What's anime? I don't like insects.)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (I will be a mech pilot someday!)</option>
+        </select>
+
+        <h3><strong>Question 9</strong></h3>
+        <h4>Real life people are awesome as cartoon characters!</h4>
+        <select class="chosen-select" id="q9">
+            <option value=""></option>
+            <option value="1">1 (Chuck Norris: Karate Kommandos was an abomination.)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Mr. T's Dozer is my spirit animal.)</option>
+        </select>
+
+        <h3><strong>Question 10</strong></h3>
+        <h4>You feel as though enslaving friendly ponies to pull a demonic "Chariot of Darkness" is a solid use of time.</h4>
+        <select class="chosen-select" id="q10">
+            <option value=""></option>
+            <option value="1">1 (Evil centaurs have no place where friendship is magic)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Tirek had it right! Enslave all ponies!)</option>
+        </select>
+
+        <br>
+        <br>
+        <br>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn btn-danger btn-lg" id="submit"><i class="fa fa-check-circle"></i>
+            Tell me my cartoon connection!</button>
+
+    </div>
+
+</body>
