@@ -1,28 +1,23 @@
-const friends = require("../data/friends.js");
+const toons = require("../data/toons.js");
 
 module.exports = (app) => {
-    // Return all friends found in friends.js as JSON
-    app.get("/api/friends", (req, res) => {
-        res.json(friends);
+    app.get("/api/toons", (req, res) => {
+        res.json(toons);
     });
 
-    app.post("/api/friends", (req, res) => {
-        var totalDifference = 0;
+    app.post("/api/toons", (req, res) => {
+        let totalDifference = 0;
     
-        var bestMatch = {
+        const bestMatch = {
           name: "",
           photo: "",
-          friendDifference: 1000
+          toonDifference: 1000
         };
     
-        var userData = req.body;
-        console.log("userData(api 19):"+ userData);
-        var userName = userData.name;
-        console.log("userName(api 21):"+ userName);
-        var userScores = userData.scores;
-        console.log("userScores(api 23):"+ userScores);
-    
-        var b = userScores.map((item) => {
+        let userData = req.body;
+        let userName = userData.name;
+        let userScores = userData.scores;
+        let b = userScores.map((item) => {
           return parseInt(item, 10);
         });
         userData = {
@@ -31,36 +26,31 @@ module.exports = (app) => {
           scores: b
         };
 
-        console.log("Name: " + userName);
-        console.log("User score: " + userScores);
-
+        console.log("----------------------------------");
+        console.log("User Name: " + userName);
+        console.log("User scores: " + userScores);
+        console.log("----------------------------------");
+        console.log("POSSIBLE CARTOON BESTIES:");
+        console.log("**********************************");
         var sum = b.reduce((a, b) => a + b, 0);
-        console.log("Sum of user's score: " + sum);
-        console.log("Best match friend diff: " + bestMatch.friendDifference);
-        console.log("++++++++++++++++++++++++++++++++++++++++++++++++");
-
-        for (var i = 0; i < friends.length; i++) {
-            console.log(friends[i].name);
+        //loop through all potential cartoon friends and compare scores
+        for (var i = 0; i < toons.length; i++) {
+            console.log(toons[i].name);
             totalDifference = 0;
-            console.log("Total Diff: " + totalDifference);
-            console.log("Best match friend diff: " + bestMatch.friendDifference);
-
-            var bestFriendScore = friends[i].scores.reduce((a, b) => a + b, 0);
-            console.log("Total friend score: " + bestFriendScore);
-            totalDifference += Math.abs(sum - bestFriendScore);
-            console.log("____________________________________>" + totalDifference);
-
-            if (totalDifference <= bestMatch.friendDifference) {
-                bestMatch.name = friends[i].name;
-                bestMatch.photo = friends[i].photo;
-                bestMatch.friendDifference = totalDifference;
+            var bestToonScore = toons[i].scores.reduce((a, b) => a + b, 0);
+            console.log("Total toon score: " + bestToonScore);
+            totalDifference += Math.abs(sum - bestToonScore);
+            console.log("Total Difference: " + totalDifference);
+            console.log("************************************");
+            if (totalDifference <= bestMatch.toonDifference) {
+                bestMatch.name = toons[i].name;
+                bestMatch.photo = toons[i].photo;
+                bestMatch.toonDifference = totalDifference;
             }
-            console.log(totalDifference + " Total Difference");
         }
-        console.log(bestMatch);
-        friends.push(userData);
-        console.log("New User Added");
-        console.log(userData);
+        console.log("************************************");
+        console.log("BEST MATCH: " + bestMatch.name + "!!!");
+        toons.push(userData);
         res.json(bestMatch);
     });
 };
