@@ -1,4 +1,4 @@
-var toons = [
+var friends = [
 	{
 		name: "He-Man",
 		photo: "https://cnet1.cbsistatic.com/img/EXELzMTVtTKK4gxg395yF31MaeQ=/1200x675/2019/12/19/a3a6ed4e-5670-4125-b2bb-b19cc686c767/twitter-in-stream-wide-heman-mattel.jpg",
@@ -23,7 +23,7 @@ var toons = [
 		name: "Cobra Commander",
         photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYbxyP1a_ZyOtksXVaxVdec2_qwT1AXcA1wLDQnva0ujJAj_8u&s",
         scores: [1, 2, 2, 5, 1, 1, 1, 3, 4, 5]
-    }
+    },
     {
 		name: "Michalangelo",
 		photo: "https://cnet1.cbsistatic.com/img/EXELzMTVtTKK4gxg395yF31MaeQ=/1200x675/2019/12/19/a3a6ed4e-5670-4125-b2bb-b19cc686c767/twitter-in-stream-wide-heman-mattel.jpg",
@@ -50,3 +50,5 @@ var toons = [
 		scores: [1, 2, 2, 5, 2, 3, 2, 5, 5, 2]
 	}
 ];
+
+module.exports = friends;
