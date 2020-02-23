@@ -24,11 +24,9 @@
         <!-- About You Section -->
         <h2><strong>Survey Questions</strong></h2>
         <hr>
-        <h3><strong>About You</strong></h3>
-        <h4>Name (please include any titles or use nicknames such as "The Great" or "Gluttonous Bob")</h4>
+        <h3><strong>Name</strong></h3>
+        <h4>(please include any titles or use nicknames such as "The Great" or "Gluttonous Bob")</h4>
         <input type="text" id="name" class="form-control" required="">
-        <h4>Image Link (fake catfishing photos preferred, but something is required here)</h4>
-        <input type="text" id="photo" class="form-control" required="">
         <hr>
 
         <h3><strong>LET THE INQUISITION BEGIN!</strong></h3>
@@ -187,6 +185,7 @@
         <!-- javascript -->
         <script type="text/javascript">
             $("#submit").on("click", function () {
+                // Ensures entire form is filled out
                 function validateForm() {
                     var isValid = true;
                     $(".form-control").each(function () {
@@ -197,26 +196,13 @@
                     });
                     return isValid;
                 }
+                // if entire form is filled out, captures user data and returns a modal with matched toon
                 if (validateForm() === true) {
                     const userData = {
                         name: $("#name").val(),
-                        photo: $("#photo").val(),
-                        scores: [
-                            $("#q1").val(),
-                            $("#q2").val(),
-                            $("#q3").val(),
-                            $("#q4").val(),
-                            $("#q5").val(),
-                            $("#q6").val(),
-                            $("#q7").val(),
-                            $("#q8").val(),
-                            $("#q9").val(),
-                            $("#q10").val(),
-                        ]
+                        scores: [$("#q1").val(),$("#q2").val(),$("#q3").val(),$("#q4").val(),$("#q5").val(),$("#q6").val(),$("#q7").val(),$("#q8").val(),$("#q9").val(),$("#q10").val()]
                     };
-                    const currentURL = window.location.origin;
-
-                    $.post(currentURL + "/api/toons", userData, function (data) {
+                    $.post(window.location.origin + "/api/toons", userData, function (data) {
                         $("#matchName").text(data.name);
                         $("#matchImg").attr("src", data.photo);
                         $("#resultsModal").modal("toggle");
@@ -226,6 +212,7 @@
                 }
 
             });
+            
         </script>
         <script src=../../server.js></script>
 </body>

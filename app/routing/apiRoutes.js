@@ -1,6 +1,8 @@
+//Requirements
 const toons = require("../data/toons.js");
 
 module.exports = (app) => {
+  //JSON list of toons
     app.get("/api/toons", (req, res) => {
         res.json(toons);
     });
@@ -22,10 +24,10 @@ module.exports = (app) => {
         });
         userData = {
           name: req.body.name,
-          photo: req.body.photo,
           scores: b
         };
 
+        //lists all toons in console with scores and difference
         console.log("----------------------------------");
         console.log("User Name: " + userName);
         console.log("User scores: " + userScores);
